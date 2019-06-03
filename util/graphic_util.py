@@ -5,8 +5,10 @@ import matplotlib.pyplot as plot
 class GraphicUtil:
 
     @staticmethod
-    def generate_plot(points, path):
-        x =[]
+    def generate_plot(aco_service):
+        points = aco_service.points
+        path = aco_service.path
+        x = []
         y = []
         for point in points:
             x.append(point[0])
