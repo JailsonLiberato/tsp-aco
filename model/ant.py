@@ -1,11 +1,10 @@
-from util.graphic_util import GraphicUtil
-from business.aco_service import AntColonyOptimizationService
+from model.graphic import Graphic
 import random
 
 
 class Ant:
 
-    def __init__(self, aco: AntColonyOptimizationService, graph: GraphicUtil):
+    def __init__(self, aco, graph: Graphic):
         self.__colony = aco
         self.__graph = graph
         self.__total_cost = 0.0
@@ -13,7 +12,7 @@ class Ant:
         self.__pheromone_delta = []
         self.__allowed = [i for i in range(graph.rank)]
         self.__eta = [[0 if i == j else 1 / graph.matrix[i][j] for j in range(graph.rank)] for i in
-                      range(graph.rank)]  # heuristic information
+                      range(graph.rank)]
         start = random.randint(0, graph.rank - 1)
         self.__tabu.append(start)
         self.__current = start

@@ -5,9 +5,7 @@ import matplotlib.pyplot as plot
 class GraphicUtil:
 
     @staticmethod
-    def generate_plot(aco_service):
-        points = aco_service.points
-        path = aco_service.path
+    def generate_plot(points, path):
         x = []
         y = []
         for point in points:
